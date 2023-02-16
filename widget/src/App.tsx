@@ -6,6 +6,7 @@ function App() {
   const [message, setMessage] = useState<string>('')
   const [avaliation, setAvaliation] = useState<1|2|3|4|5|6|7|8|9|10>(10)
   const [miss, setMiss] = useState<boolean>(false)
+  const local = document.location.href
 
   const radioOptions = [
     {value: 1, color: 'red'},
@@ -49,7 +50,7 @@ function App() {
 
         <button disabled={message === ''} onClick={sendAvaliation} className="sendAvaliation">Enviar avaliação</button>
       </header>}
-      <a className="copyFrame" onClick={()=>{navigator.clipboard.writeText('<iframe style="z-index: 999999;border: none;position: fixed;bottom: 15px;height: 100vh;left: 0;width: 621px;right: 0;margin: auto;display: inline-table;background: transparent;" src="http://localhost:3000/"></iframe>')}}>
+      <a className="copyFrame" onClick={()=>{navigator.clipboard.writeText(`<iframe style="z-index: 999999;border: none;position: fixed;bottom: 15px;height: 100vh;left: 0;width: 621px;right: 0;margin: auto;display: inline-table;background: transparent;" src="${local}"></iframe>`)}}>
         Copy iFrame Tag
       </a>
     </div>
