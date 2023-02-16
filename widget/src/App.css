@@ -157,9 +157,15 @@
 .sendAvaliation:disabled:hover {
   background-color: rgb(255, 157, 20, 0.5);
 }
+
 .optionsCheck {
   margin-bottom: 10px;
+  display: flex;
+  margin-bottom: 10px;
+  align-content: space-between;
+  justify-content: space-between;
 }
+
 .optionsCheck button{
   font-size: 14px;
   margin: 5px;
@@ -169,7 +175,13 @@
   border-style: solid;
   border-radius: 15%;
   cursor: pointer;
+}
 
+.optionsCheck button:first-child{
+  margin-left: 0px
+}
+.optionsCheck button:last-child{
+  margin-right: 0px
 }
 .option_yellow{
   border-color: rgb(255 211 30);
