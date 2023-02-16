@@ -7,6 +7,7 @@ function App() {
   const [avaliation, setAvaliation] = useState<1|2|3|4|5|6|7|8|9|10>(10)
   const [miss, setMiss] = useState<boolean>(false)
   const local = document.location.href
+  console.log(local)
 
   const radioOptions = [
     {value: 1, color: 'red'},
