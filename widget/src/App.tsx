@@ -47,7 +47,7 @@ function App() {
           )}
         </div>
 
-        <textarea placeholder='Deixe um comentário' rows={3} style={{}} className='textArea' value={message} onChange={(event)=>setMessage(event.target.value)} />
+        <textarea placeholder='Deixe um comentário (obrigatório)' rows={3} style={{}} className='textArea' value={message} onChange={(event)=>setMessage(event.target.value)} />
 
         <button disabled={message === '' || !avaliation} onClick={sendAvaliation} className="sendAvaliation">Enviar avaliação</button>
       </header>}
