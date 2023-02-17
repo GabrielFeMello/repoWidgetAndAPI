@@ -51,6 +51,9 @@ function App() {
 
         <button disabled={message === '' || !avaliation} onClick={sendAvaliation} className="sendAvaliation">Enviar avaliação</button>
       </header>}
+      {/* <a className="copyFrame" onClick={()=>{navigator.clipboard.writeText(`<iframe style="z-index: 999999;border: none;position: fixed;bottom: 15px;height: 100vh;left: 0;width: 621px;right: 0;margin: auto;display: inline-table;background: transparent;" src="https://repo-widget-and-api.vercel.app/"></iframe>`)}}>
+        Copy iFrame Tag
+      </a> */}
     </div>
   );
 }

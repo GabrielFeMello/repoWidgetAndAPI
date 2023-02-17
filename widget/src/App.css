@@ -7,6 +7,7 @@
   border-radius: 5px;
   border-top: 5px solid #03363d;
   box-sizing: border-box;
+  box-shadow: 0px 10px 8px #d6d6d6;
 }
 @keyframes appMiss {
   from {opacity: 1;}
