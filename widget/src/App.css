@@ -1,9 +1,9 @@
 .App {
   display: block;
-  width: 600px;
+  width: 500px;
   background-color: rgb(255, 255, 255);
-  border: 2px solid rgb(171, 171, 171);
-  padding: 25px;
+  border: 1px solid rgb(171, 171, 171);
+  padding: 20px;
   border-radius: 5px;
   border-top: 5px solid rgb(255, 149, 0);
   box-sizing: border-box
@@ -15,12 +15,12 @@
 
 .App-miss {
   display: block;
-  width: 600px;
+  width: 500px;
   background-color: rgb(255, 255, 255);
   border: 2px solid rgb(171, 171, 171);
-  padding: 25px;
+  padding: 20px;
   border-radius: 5px;
-  border-top: 5px solid rgb(255, 149, 0);
+  border-top: 4px solid rgb(255, 149, 0);
   box-sizing: border-box;
   animation-name: appMiss;
   animation-duration: 1.2s;
@@ -30,22 +30,12 @@
   animation-delay: 4s;
 }
 
-.App-logo {
-  height: 50px;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .App-header {
   box-sizing: border-box;
   width: 100%;
   display: block;
-  margin-bottom: 15px
+  margin-bottom: 14px
 }
 
 
@@ -54,15 +44,7 @@
   width: 100%;
   display: block;
   margin-bottom: 15px;
-  height: 200px;
-  position: relative;
-}
-.App-header-gratefull{
-  box-sizing: border-box;
-  width: 100%;
-  display: block;
-  margin-bottom: 15px;
-  height: 200px;
+  height: 175px;
   position: relative;
 }
 
@@ -80,7 +62,7 @@
   margin: auto;
   padding-top: 15px;
   text-align: center;
-  font-size: 24px;
+  font-size: 18px;
   animation-name: showThanksMiss;
   animation-duration: 1.2s;
   animation-play-state: running;
@@ -104,22 +86,24 @@
 
 .App-header p {
   display: block;
-  font-size: 16px;
+  font-size: 12px;
   margin-top: 0;
   margin-bottom: 5px;
   text-align: left; 
   width: 100%;
   break-after: always;
-  color: rgb(41, 41, 41)
+  color: rgb(41, 41, 41);
+  font-weight: 600;
 }
 
 .textArea {
   width: 100%;
+  font-weight: 300;
   display: block;
   box-sizing: border-box;
   border: 1px solid rgba(100,100,100,0.2);
   padding: 8px;
-  font-size: 14px
+  font-size: 12px
 }
 
 .copyFrame {
@@ -133,15 +117,16 @@
 .sendAvaliation {
   border: none;
   cursor: pointer;
+  font-weight: 300;
   background-color: rgb(255, 149, 0);
-  padding: 5px 15px;
+  padding: 5px 12px;
   display: block;
   color: #fbfbfb;
   width: 100%;
   box-sizing: border-box;
   margin-top: 15px;
   text-align: center;
-  font-size: 16px;
+  font-size: 14px;
   padding: 15px;
   text-transform: uppercase;
   animation-duration: 0.4s;
@@ -167,11 +152,12 @@
 }
 
 .optionsCheck button{
-  font-size: 14px;
+  font-size: 12px;
+  font-weight: 300;
   margin: 5px;
   background: transparent;
-  width: 45px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-style: solid;
   border-radius: 18%;
   cursor: pointer;
