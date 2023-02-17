@@ -125,7 +125,7 @@
   border: none;
   cursor: pointer;
   font-weight: 300;
-  background-color: #0cc4b6;
+  background-color: #f6a523;
   padding: 5px 12px;
   display: block;
   color: #fbfbfb;
@@ -140,7 +140,7 @@
   animation-timing-function: ease-in;
 }
 .sendAvaliation:hover {
-  background-color:#12d2c2;
+  background-color:#ffb339;
 }
 .sendAvaliation:disabled {
   cursor: not-allowed;
@@ -167,6 +167,7 @@
   background: transparent;
   width: 34px;
   height: 34px;
+  border-width: 1px;
   border-style: solid;
   border-radius: 18%;
   cursor: pointer;
