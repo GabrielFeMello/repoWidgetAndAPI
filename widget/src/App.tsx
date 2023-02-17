@@ -32,7 +32,7 @@ function App() {
     <div className={`App${miss ? '-miss' :''}`}>
 
       {miss ? <div className={"App-header-gratefull"}>
-        <p>Obrigado 🧡<br/>Temos um presente surpresa para você, <a href="https://gifs.eco.br/wp-content/uploads/2021/07/lindos-gifs-de-flores-0.gif" target="_blank">clique aqui</a> para ver.</p>
+        <p>Obrigado 🧡<br/>Temos um presente surpresa para você,<br/><a href="https://gifs.eco.br/wp-content/uploads/2021/07/lindos-gifs-de-flores-0.gif" target="_blank">clique aqui</a> para ver.</p>
       </div> : <header className={"App-header"}>
         <p>Numa escala de 1 a 10, quanto você indicaria a Tiflux para um amigo ou conhecido?</p>
         
