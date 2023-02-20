@@ -8,7 +8,8 @@ class App {
   constructor() {
     this.server = express();
     var allowedOrigins = [
-      'http://localhost:3000'
+      'http://localhost:3000',
+      "https://repo-widget-and-api.vercel.app/"
     ];
 
     this.server.use(cors({

@@ -72,7 +72,7 @@ function App() {
         Copy iFrame Tag
       </a> */}
       {/*
-        <script> window.addEventListener("message", (event) => { console.log(event); if (event.data === "event=closeiframe") {var proxy_frame = document.getElementById('npsIframe'); proxy_frame.remove(); return;}; return;}, false);var organization_id = 1; var user_id = 1; var client_id = 1; var iframe = document.createElement('iframe'); iframe.style = 'z-index: 999999; border: none; position: fixed; bottom: 0px; top:0px; left: 0px; height: 100%; width: 100%; right: 0px; margin: auto; display: inline-table; background: rgba(0,0,0,0.4);'; iframe.src = 'http://localhost:3000/?user_id='+user_id+'&organization_id='+organization_id+'&client_id='+client_id; iframe.id = 'npsIframe'; document.body.appendChild(iframe); </script>
+        <script> window.addEventListener("message", (event) => { console.log(event); if (event.data === "event=closeiframe") {var proxy_frame = document.getElementById('npsIframe'); proxy_frame.remove(); return;}; return;}, false);var organization_id = 1; var user_id = 1; var client_id = 1; var iframe = document.createElement('iframe'); iframe.style = 'z-index: 999999; border: none; position: fixed; bottom: 0px; top:0px; left: 0px; height: 100%; width: 100%; right: 0px; margin: auto; display: inline-table; background: rgba(0,0,0,0.4);'; iframe.src = 'https://repo-widget-and-api.vercel.app/?user_id='+user_id+'&organization_id='+organization_id+'&client_id='+client_id; iframe.id = 'npsIframe'; document.body.appendChild(iframe); </script>
         
       */}
     </div>
