@@ -10,8 +10,10 @@
   box-shadow: 0px 10px 8px #d6d6d6;
 }
 @keyframes appMiss {
-  from {opacity: 1;}
-  to {opacity: 0;}
+  0% {opacity: 1; display: block;}
+  95% {opacity: 0; display: block;}
+  98% {opacity: 0; display: block;}
+  100% {opacity: 0; display: none;}
 }
 
 .App-miss {
@@ -71,20 +73,6 @@
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 
 .App-header p {
   display: block;
@@ -175,6 +163,10 @@
   cursor: pointer;
 }
 
+.optionsCheck button:disabled{
+  cursor: not-allowed;
+  opacity: 0.4;
+}
 .optionsCheck button:first-child{
   margin-left: 0px
 }
