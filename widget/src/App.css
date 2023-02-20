@@ -7,7 +7,7 @@
   border-radius: 5px;
   border-top: 5px solid #03363d;
   box-sizing: border-box;
-  box-shadow: 0px 10px 8px #d6d6d6;
+  box-shadow: 0px 10px 8px #626262
 }
 @keyframes appMiss {
   0% {opacity: 1; display: block;}
@@ -25,7 +25,7 @@
   border-radius: 5px;
   border-top: 4px solid #03363d;
   box-sizing: border-box;
-  box-shadow: 0px 10px 8px #d6d6d6;
+  box-shadow: 0px 10px 8px #626262;
   animation-name: appMiss;
   animation-duration: 1.2s;
   animation-play-state: running;
@@ -200,4 +200,66 @@
   border-color: red !important;
   color: white !important;
   background-color: red !important;
+}
+
+
+@media (max-width: 600px) {
+  .App {
+    width: 345px;
+    border: 0.5px solid hsl(0, 0%, 84%);
+    padding: 15px 15px 0px;
+    border-top: 2px solid #03363d;
+  }
+  .App-miss {
+    width: 345px;
+    border: 0.5px solid hsl(0, 0%, 84%);
+    padding: 15px 15px 0px;
+    border-top: 2px solid #03363d;
+  }
+  
+  .App-header {
+    margin-bottom: 9px
+  }
+  
+  .App-header-gratefull{
+    margin-bottom: 10px;
+    height: 100px;
+  }
+  
+  .App-header-gratefull p{
+    padding-top: 6px;
+    font-size: 12px;
+  }
+  
+  .App-header p {
+    font-size: 9px;
+    margin-top: 0;
+    margin-bottom: 3px;
+  }
+  
+  .textArea {
+    border: 1px solid rgba(100,100,100,0.2);
+    padding: 5px;
+    font-size: 9px
+  }
+  
+  .sendAvaliation {
+    padding: 3px 7px;
+    margin-top: 10px;
+    font-size: 9px;
+    padding: 5px;
+  }
+  
+  .optionsCheck {
+    margin-bottom: 5px;
+  }
+  
+  .optionsCheck button{
+    font-size: 8px;
+    font-weight: 300;
+    margin: 3px;
+    width: 15;
+    height: 15px;
+    border-width: .5px;
+  }
 }

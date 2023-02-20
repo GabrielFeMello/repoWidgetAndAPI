@@ -16,6 +16,29 @@ body {
   font-weight: 200;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  z-index: 999999;
+  border: none;
+  position: fixed;
+  bottom: 15px;
+  left: 0;
+  height: 265px;
+  width: 575px;
+  right: 0;
+  margin: auto;
+  display: inline-table;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 600px) {
+  body {
+    top: 115px;
+    bottom: auto;
+    left: 0;
+    height: auto;
+    width: 365px;
+  }
+
 }
 
 code {
