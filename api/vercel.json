@@ -12,5 +12,5 @@
       "dest": "index.js"
     }
   ],
-  "rewrites": [{ "source": "/src/(.*)", "destination": "/src" }]
+  "rewrites": [{ "source": "/public/(.*)", "destination": "/public" }]
 }
