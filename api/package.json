@@ -6,8 +6,9 @@
   "author": "Gabriel Mello",
   "license": "MIT",
   "scripts": {
+    "start": "nodemon public/index.ts",
     "build": "tsc --project ./",
-    "start:dev": "nodemon index.ts",
+    "start:dev": "nodemon public/index.ts",
     "start:prod": "node dist/index.js"
   },
   "dependencies": {
