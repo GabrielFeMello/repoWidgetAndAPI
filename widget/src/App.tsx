@@ -2,12 +2,13 @@ import { useState } from 'react';
 import './App.css';
 import { sendAvaliationToAPI } from './services/avaliation';
 
-
 function App() {
   const [message, setMessage] = useState<string>('')
   const [avaliation, setAvaliation] = useState<undefined|1|2|3|4|5|6|7|8|9|10>(undefined)
   const [miss, setMiss] = useState<boolean>(false)
   const [loadingAnswer, setLoadingAnswer] = useState(false)
+  console.log(process.env.API_URL)
+  console.log("process", process.env)
 
   const radioOptions = [
     {value: 1, color: 'red'},
@@ -22,6 +23,7 @@ function App() {
     {value: 10, color: 'green'}
   ]
 
+
   async function sendAvaliation() {
     setLoadingAnswer(true)
     try {
@@ -30,8 +32,7 @@ function App() {
       const user_id = Number(urlParams.get('user_id'));
       const organization_id = Number(urlParams.get('organization_id'));
       const client_id = Number(urlParams.get('client_id'));
-      const {data} = await sendAvaliationToAPI(organization_id, user_id, client_id);
-      console.log("RETURNED DATA", data)
+      await sendAvaliationToAPI(organization_id, user_id, client_id);
       setMiss(true);
       setLoadingAnswer(false)
       setTimeout(()=>
