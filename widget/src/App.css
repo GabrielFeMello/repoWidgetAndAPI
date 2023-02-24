@@ -134,12 +134,12 @@
 }
 .sendAvaliation:disabled {
   cursor: not-allowed;
-  color: #828282;
-  background-color: #d4d4d4;
+  color: #ffe8e8;
+  background-color: #e6b86d;
 }
 .sendAvaliation:disabled:hover {
-  color: #828282;
-  background-color: #d4d4d4;
+  color: #ffe8e8;
+  background-color: #e6b86d;
 }
 
 .optionsCheck {
@@ -200,6 +200,25 @@
   border-color: red !important;
   color: white !important;
   background-color: red !important;
+}
+#otherAnswers {
+  display: flex;
+  align-content: space-between;
+  justify-content: space-between;
+}
+#otherAnswers button{
+  width: auto;
+  text-align: center;
+  padding: 12px 15px;
+  font-size: 10px;
+}
+#noAnswer{
+  background: transparent;
+  color: gray
+}
+#answerLater{
+  background: rgb(219, 219, 219);
+  color: rgb(25, 25, 25)
 }
 
 

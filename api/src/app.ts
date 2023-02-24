@@ -8,12 +8,19 @@ class App {
   constructor() {
     this.server = express();
     var allowedOrigins = [
+      'https://localhost:3000',
+      'https://localhost:3003',
+      'https://localhost:3001',
       'http://localhost:3000',
-      "https://repo-widget-and-api.vercel.app/"
+      'http://localhost:3003',
+      'http://localhost:3001',
+      "https://repo-widget-and-api.vercel.app/",
+      "http://repo-widget-and-api.vercel.app/"
     ];
 
     this.server.use(cors({
       origin: function(origin, callback){
+        console.log("A ORIGIN É", origin)
         // allow requests with no origin 
         // (like mobile apps or curl requests)
         if(!origin) return callback(null, true);

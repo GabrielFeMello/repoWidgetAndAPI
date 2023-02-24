@@ -294,8 +294,6 @@ model clients {
 }
 model nps_researches {
   id              Int       @id @default(autoincrement())
-  organization_id Int
-  user_id         Int
   starts_at       DateTime? @db.Timestamp(6)
   ends_at         DateTime? @db.Timestamp(6)
   user_kinds      String[]  @default([])
@@ -313,6 +311,10 @@ model nps_answers {
   user_role         String?   @db.VarChar(255)
   organization_name String?   @db.VarChar(255)
   user_email        String?   @db.VarChar(255)
+  is_admin          Boolean   @default(false)
+  is_new_frontend   Boolean   @default(true)
+  nps_research_id   Int
+  no_answer         Boolean   @default(false)
   created_at        DateTime? @db.Timestamp(6)
   updated_at        DateTime? @db.Timestamp(6)
 
