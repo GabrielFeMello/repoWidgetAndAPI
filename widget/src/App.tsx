@@ -7,8 +7,6 @@ function App() {
   const [avaliation, setAvaliation] = useState<undefined|1|2|3|4|5|6|7|8|9|10>(undefined)
   const [miss, setMiss] = useState<boolean>(false)
   const [loadingAnswer, setLoadingAnswer] = useState(false)
-  console.log(process.env.API_URL)
-  console.log("process", process.env)
 
   const radioOptions = [
     {value: 1, color: 'red'},
@@ -31,8 +29,10 @@ function App() {
       const urlParams = new URLSearchParams(queryString);
       const user_id = Number(urlParams.get('user_id'));
       const organization_id = Number(urlParams.get('organization_id'));
-      const client_id = Number(urlParams.get('client_id'));
-      await sendAvaliationToAPI(organization_id, user_id, client_id);
+      const is_admin = urlParams.get('is_admin') === '1';
+      const is_new_frontend = urlParams.get('is_new_frontend') === '1';
+      const research_id = Number(urlParams.get('research_id'));
+      await sendAvaliationToAPI(organization_id, user_id, is_admin, is_new_frontend, message, Number(avaliation), research_id);
       setMiss(true);
       setLoadingAnswer(false)
       setTimeout(()=>
@@ -73,7 +73,7 @@ function App() {
         Copy iFrame Tag
       </a> */}
       {/*
-        <script> window.addEventListener("message", (event) => { console.log(event); if (event.data === "event=closeiframe") {var proxy_frame = document.getElementById('npsIframe'); proxy_frame.remove(); return;}; return;}, false);var organization_id = 1; var user_id = 1; var client_id = 1; var iframe = document.createElement('iframe'); iframe.style = 'z-index: 999999; border: none; position: fixed; bottom: 0px; top:0px; left: 0px; height: 100%; width: 100%; right: 0px; margin: auto; display: inline-table; background: rgba(0,0,0,0.4);'; iframe.src = 'https://repo-widget-and-api.vercel.app/?user_id='+user_id+'&organization_id='+organization_id+'&client_id='+client_id; iframe.id = 'npsIframe'; document.body.appendChild(iframe); </script>
+        <script> window.addEventListener("message", (event) => { console.log(event); if (event.data === "event=closeiframe") {var proxy_frame = document.getElementById('npsIframe'); proxy_frame.remove(); return;}; return;}, false);var organization_id = 1; var user_id = 1; var is_new_frontend = '1'; var is_admin = '1'; var research_id = 1; var iframe = document.createElement('iframe'); iframe.style = 'z-index: 999999; border: none; position: fixed; bottom: 0px; top:0px; left: 0px; height: 100%; width: 100%; right: 0px; margin: auto; display: inline-table; background: rgba(0,0,0,0.4);'; iframe.src = 'https://repo-widget-and-api.vercel.app/?user_id='+user_id+'&organization_id='+organization_id+'&is_admin='+is_admin+'&is_new_frontend='+is_new_frontend'&research_id='+research_id; iframe.id = 'npsIframe'; document.body.appendChild(iframe); </script>
         
       */}
     </div>

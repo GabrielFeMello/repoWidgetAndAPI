@@ -1,11 +1,386 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
-
 datasource db {
   provider = "postgresql"
   url      = env("GENERAL_DATABASE_URL")
+}
+model organizations {
+  id                                                Int       @id @default(autoincrement())
+  name                                              String?   @db.VarChar(255)
+  social                                            String?   @db.VarChar(255)
+  country                                           String?   @db.VarChar(255)
+  social_revenue                                    String?   @db.VarChar(255)
+  contract_start                                    DateTime? @db.Date
+  contract_end                                      DateTime? @db.Date
+  created_at                                        DateTime? @db.Timestamp(6)
+  updated_at                                        DateTime? @db.Timestamp(6)
+  agent_config                                      Json?     @db.Json
+  show_notices                                      Boolean?  @default(true)
+  logo_file_name                                    String?   @db.VarChar(255)
+  logo_content_type                                 String?   @db.VarChar(255)
+  logo_file_size                                    Int?
+  logo_updated_at                                   DateTime? @db.Timestamp(6)
+  time_zone                                         String?   @default("UTC") @db.VarChar(255)
+  max_users                                         Int?      @default(0)
+  max_desks                                         Int?      @default(0)
+  max_agents                                        Int?      @default(0)
+  currency                                          String?   @default("$") @db.VarChar(255)
+  tickets_number                                    Int?      @default(0)
+  language                                          String?   @default("en") @db.VarChar(255)
+  vnc_host                                          String?   @db.VarChar(255)
+  reports                                           Json?     @db.Json
+  copyright_message                                 String?   @db.VarChar(255)
+  use_copyright_message                             Boolean?  @default(false)
+  use_client_logo                                   Boolean?  @default(false)
+  use_itmanager_logo                                Boolean?  @default(true)
+  default_email                                     String?   @db.VarChar(255)
+  use_tiflux_logo                                   Boolean?  @default(true)
+  app_url                                           String?   @db.VarChar(255)
+  app_title                                         String?   @db.VarChar(255)
+  favicon_file_name                                 String?   @db.VarChar(255)
+  favicon_content_type                              String?   @db.VarChar(255)
+  favicon_file_size                                 Int?
+  favicon_updated_at                                DateTime? @db.Timestamp(6)
+  add_duplicate_appointment                         Boolean?  @default(false)
+  can_recreate_equipment                            Boolean?  @default(false)
+  clear_responsible_for_change_stage                Boolean?  @default(false)
+  remote_question_hours_valid                       Int?      @default(1)
+  agent_version                                     Json?     @db.Json
+  telephone                                         String?   @db.VarChar(255)
+  agree                                             Boolean?  @default(false)
+  status                                            Int?      @default(0)
+  background_header                                 String?   @default("#112233") @db.VarChar(255)
+  color_header                                      String?   @default("#fafafa") @db.VarChar(255)
+  default_webhook_email                             String?   @db.VarChar(255)
+  token                                             String?   @db.VarChar(255)
+  external_form_token                               String?   @db.VarChar(255)
+  use_external_form                                 Boolean?  @default(false)
+  agent_icon_file_name                              String?   @db.VarChar(255)
+  agent_icon_content_type                           String?   @db.VarChar(255)
+  agent_icon_file_size                              Int?
+  agent_icon_updated_at                             DateTime? @db.Timestamp(6)
+  max_monitorings                                   Int?      @default(0)
+  email_logo_file_name                              String?   @db.VarChar(255)
+  email_logo_content_type                           String?   @db.VarChar(255)
+  email_logo_file_size                              Int?
+  email_logo_updated_at                             DateTime? @db.Timestamp(6)
+  required_shift                                    Boolean?  @default(false)
+  plan_id                                           Int?
+  zipcode                                           String?   @db.VarChar(255)
+  city                                              String?   @db.VarChar(255)
+  street                                            String?   @db.VarChar(255)
+  number                                            String?   @db.VarChar(255)
+  estadual_registration                             String?   @db.VarChar(255)
+  billing_name                                      String?   @db.VarChar(255)
+  billing_email                                     String?   @db.VarChar(255)
+  billing_phone                                     String?   @db.VarChar(255)
+  complement                                        String?   @db.VarChar(255)
+  integration_fields                                Json?     @default("{}") @db.Json
+  sound_notification                                String?   @db.VarChar(255)
+  campaign_origin                                   String?   @db.VarChar(255)
+  done_initial_setup                                Boolean?  @default(false)
+  sla_goal                                          Int?
+  use_geolocation                                   Boolean?  @default(false)
+  enable_api_user                                   Boolean?  @default(false)
+  max_whatsapp                                      Int?      @default(0)
+  max_splashtop                                     Int?      @default(0)
+  whitelabel_email                                  Boolean?  @default(false)
+  whitelabel_url                                    Boolean?  @default(false)
+  login_background_file_name                        String?   @db.VarChar
+  login_background_content_type                     String?   @db.VarChar
+  login_background_file_size                        Int?
+  login_background_updated_at                       DateTime? @db.Timestamp(6)
+  login_background_settings                         String?   @default("background-repeat:repeat;background-position:initial;background-size:initial;background-color:#FFFFFF") @db.VarChar
+  login_background_default                          Boolean?  @default(true)
+  max_vnc                                           Int?      @default(0)
+  os_destination_id                                 String?   @db.VarChar(255)
+  subscriber_name                                   String?   @db.VarChar(255)
+  subscriber_email                                  String?   @db.VarChar(255)
+  state                                             String?   @db.VarChar(255)
+  neighborhood                                      String?   @db.VarChar(255)
+  allow_support_access                              Boolean?  @default(false)
+  app_url_identifier                                String?   @db.VarChar(255)
+  email_name_without_whitelabel                     String?   @db.VarChar(255)
+  logo_dark_and_default_mode_file_name              String?   @db.VarChar(255)
+  logo_dark_and_default_mode_content_type           String?   @db.VarChar(255)
+  logo_dark_and_default_mode_file_size              Int?
+  logo_dark_and_default_mode_updated_at             DateTime? @db.Timestamp(6)
+  minimized_logo_file_name                          String?   @db.VarChar(255)
+  minimized_logo_content_type                       String?   @db.VarChar(255)
+  minimized_logo_file_size                          Int?
+  minimized_logo_updated_at                         DateTime? @db.Timestamp(6)
+  minimized_logo_dark_and_default_mode_file_name    String?   @db.VarChar(255)
+  minimized_logo_dark_and_default_mode_content_type String?   @db.VarChar(255)
+  minimized_logo_dark_and_default_mode_file_size    Int?
+  minimized_logo_dark_and_default_mode_updated_at   DateTime? @db.Timestamp(6)
+  login_image_position                              String?   @db.VarChar(255)
+  technical_user_can_change_frontend                Boolean?  @default(true)
+  clients                                           clients[]
+
+  @@index([app_url], map: "idx_organization_app_url")
+  @@index([token], map: "index_organizations_on_token")
+}
+model users {
+  id                           Int       @id @default(autoincrement())
+  email                        String    @unique(map: "index_users_on_email") @default("") @db.VarChar(255)
+  encrypted_password           String?   @default("") @db.VarChar(255)
+  reset_password_token         String?   @unique(map: "index_users_on_reset_password_token") @db.VarChar(255)
+  reset_password_sent_at       DateTime? @db.Timestamp(6)
+  remember_created_at          DateTime? @db.Timestamp(6)
+  sign_in_count                Int       @default(0)
+  current_sign_in_at           DateTime? @db.Timestamp(6)
+  last_sign_in_at              DateTime? @db.Timestamp(6)
+  current_sign_in_ip           String?   @db.Inet
+  last_sign_in_ip              String?   @db.Inet
+  created_at                   DateTime? @db.Timestamp(6)
+  updated_at                   DateTime? @db.Timestamp(6)
+  organization_id              Int?
+  name                         String?   @default("") @db.VarChar(255)
+  mini_curriculum              String?   @default("") @db.VarChar(255)
+  invitation_token             String?   @unique(map: "index_users_on_invitation_token") @db.VarChar(255)
+  invitation_created_at        DateTime? @db.Timestamp(6)
+  invitation_sent_at           DateTime? @db.Timestamp(6)
+  invitation_accepted_at       DateTime? @db.Timestamp(6)
+  invitation_limit             Int?
+  invited_by_id                Int?
+  invited_by_type              String?   @db.VarChar(255)
+  invitations_count            Int?      @default(0)
+  technical_group_id           Int?
+  client_id                    Int?
+  avatar_file_name             String?   @db.VarChar(255)
+  avatar_content_type          String?   @db.VarChar(255)
+  avatar_file_size             Int?
+  avatar_updated_at            DateTime? @db.Timestamp(6)
+  client_ids                   Int?
+  mongodb_id                   String?   @db.VarChar(255)
+  active                       Boolean?  @default(true)
+  reports                      Json?     @db.Json
+  enabled_notifications        Json?     @default("{}") @db.Json
+  enabled_emails               Json?     @default("{}") @db.Json
+  dashboard_preferences        Json?     @default("{}") @db.Json
+  authentication_token         String?   @unique(map: "index_users_on_authentication_token") @db.VarChar(30)
+  client_last_answers          Int?      @default(0)
+  chat_status                  String?   @default("offline") @db.VarChar(255)
+  mobile_devices               Json?     @db.Json
+  enabled_mobile_notifications Json?     @default("{}") @db.Json
+  gauth_secret                 String?   @db.VarChar(255)
+  gauth_enabled                String?   @default("f") @db.VarChar(255)
+  gauth_tmp                    String?   @db.VarChar(255)
+  gauth_tmp_datetime           DateTime? @db.Timestamp(6)
+  color                        String?   @db.VarChar(255)
+  language                     String?   @db.VarChar(255)
+  failed_attempts              Int       @default(0)
+  locked_at                    DateTime? @db.Timestamp(6)
+  unlock_token                 String?   @unique(map: "index_users_on_unlock_token") @db.VarChar
+  surveys_able                 Boolean?  @default(true)
+  chat_mobile_devices          Json?     @db.Json
+  theme                        String?   @default("dynamic") @db.VarChar(255)
+  new_frontend                 Boolean?
+  new_dashboard_preferences    Json?     @default("{\"tickets\":{\"view_resume\":true,\"view_per_attendant\":true,\"view_per_desk\":true,\"view_per_client\":true,\"view_per_resource_type\":true,\"view_appointments_hours\":true,\"view_solve_expiration\":true,\"view_attendance_expiration\":true,\"view_compromises\":true,\"view_requestors_wainting_answer\":true,\"view_pending\":true,\"view_feedback\":true,\"view_recurrent_activities\":true,\"view_last_notifications\":true},\"chats\":{\"view_all_chats\":true,\"view_attendants_chats\":true,\"view_departments_chat\":true,\"view_technical_group_chats\":true,\"view_my_chats\":true},\"resources\":{\"view_resume_resources\":true,\"view_resource_triggers\":true},\"tickets_tab_active\":true,\"chats_tab_active\":true,\"resources_tab_active\":true}") @db.Json
+  already_activated_two_factor Boolean?  @default(false)
+  new_dashboard_order          Json?     @default("{\"left_tickets_widgets\":[{\"name\":\"resume_tickets\",\"position\":0},{\"name\":\"appointments_hours\",\"position\":1},{\"name\":\"tickets\",\"position\":2},{\"name\":\"recurrent_activities\",\"position\":3}],\"right_tickets_widgets\":[{\"name\":\"expired_and_compromise\",\"position\":0},{\"name\":\"pending\",\"position\":1},{\"name\":\"feedback\",\"position\":2},{\"name\":\"last_notifications\",\"position\":3}],\"resources_widgets\":[{\"name\":\"resume_resources\",\"position\":0},{\"name\":\"resource_triggers\",\"position\":1}]}") @db.Json
+  welcome_modal_visa           Boolean?  @default(false)
+  signature                    String?
+
+  @@index([invitations_count], map: "index_users_on_invitations_count")
+  @@index([invited_by_id], map: "index_users_on_invited_by_id")
+  @@index([organization_id], map: "index_users_on_organization_id")
+  @@index([technical_group_id], map: "technical_group_on_users")
+}
+model service_desk_technical_groups {
+  id                              Int       @id @default(autoincrement())
+  name                            String?   @db.VarChar(255)
+  description                     String?   @db.VarChar(255)
+  organization_id                 Int?
+  created_at                      DateTime? @db.Timestamp(6)
+  updated_at                      DateTime? @db.Timestamp(6)
+  send_periodic_appointment_hours Int?      @default(0)
+  has_compromise                  Boolean?  @default(false)
+
+  @@index([organization_id], map: "index_service_desk_technical_groups_on_organization_id")
+}
+model service_desk_technical_groups_users {
+  id                 Int  @id @default(autoincrement())
+  technical_group_id Int?
+  user_id            Int?
+}
+model role_groups_roles {
+  id            Int  @id @default(autoincrement())
+  role_group_id Int?
+  role_id       Int?
+
+  @@index([role_group_id], map: "index_role_groups_roles_role_group")
+}
+model roles {
+  id          Int       @id @default(autoincrement())
+  name        String    @default("") @db.VarChar(255)
+  created_at  DateTime? @db.Timestamp(6)
+  updated_at  DateTime? @db.Timestamp(6)
+  description String?   @db.VarChar(255)
+  mongodb_id  String?   @db.VarChar(255)
+}
+model role_groups {
+  id              Int       @id @default(autoincrement())
+  name            String?   @db.VarChar(255)
+  description     String?   @db.VarChar(255)
+  organization_id Int?
+  created_at      DateTime? @db.Timestamp(6)
+  updated_at      DateTime? @db.Timestamp(6)
+  deletable       Boolean?  @default(true)
+  mongodb_id      String?   @db.VarChar(255)
+
+  @@index([organization_id], map: "index_role_groups_on_organization_id")
+}
+model role_groups_service_desk_technical_groups {
+  id                 Int  @id @default(autoincrement())
+  role_group_id      Int?
+  technical_group_id Int?
+}
+model role_groups_users {
+  id            Int  @id @default(autoincrement())
+  role_group_id Int?
+  user_id       Int?
+}
+model clients {
+  id                       Int            @id @default(autoincrement())
+  name                     String?        @db.VarChar(255)
+  social                   String?        @db.VarChar(255)
+  social_revenue           String?        @db.VarChar(255)
+  status                   Boolean?       @default(true)
+  organization_id          Int?
+  created_at               DateTime?      @db.Timestamp(6)
+  updated_at               DateTime?      @db.Timestamp(6)
+  equipment_counter        Int?           @default(0)
+  group_counter            Int?           @default(0)
+  agent_config             Json?          @db.Json
+  uuid_id                  String?        @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  user_ids                 Int?
+  mongodb_id               String?        @db.VarChar(255)
+  user_counter             Int?           @default(0)
+  max_agents               Int?           @default(0)
+  logo_file_name           String?        @db.VarChar(255)
+  logo_content_type        String?        @db.VarChar(255)
+  logo_file_size           Int?
+  logo_updated_at          DateTime?      @db.Timestamp(6)
+  integrations             Json?          @default("[]") @db.Json
+  email_financial          String?        @db.VarChar(255)
+  sms_financial            String?        @db.VarChar(255)
+  municipal_registration   String?        @db.VarChar(255)
+  estadual_registration    String?        @db.VarChar(255)
+  work_folder              String?        @db.VarChar(255)
+  visible_to_clients       Boolean?       @default(false)
+  anotations               String?
+  quarterly_billing        Boolean?       @default(false)
+  quarterly_bill_client_id Int?
+  form_of_payment          Int?           @default(0)
+  billing_type             Int?           @default(0)
+  emission_nfe             Int?           @default(0)
+  billing_report_type      String?        @default("detailed_with_appointment") @db.VarChar(255)
+  billing_asaas_type       Int?           @default(0)
+  billing_contaazul_type   Int?           @default(0)
+  batch_due_day            Int?
+  enable_billing_in_batch  Boolean?       @default(true)
+  billing_days_before      Int?           @default(5)
+  automatic_billing        Boolean?       @default(false)
+  removed                  Boolean?       @default(false)
+  removed_at               DateTime?      @db.Timestamp(6)
+  create_contaazul_sale    Boolean?       @default(false)
+  authorization_flow       Boolean?       @default(false)
+  organizations            organizations? @relation(fields: [organization_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@index([id, uuid_id], map: "index_clients_on_id_and_uuid_id")
+  @@index([organization_id], map: "organization_id_on_clients")
+}
+model nps_researches {
+  id              Int       @id @default(autoincrement())
+  organization_id Int
+  user_id         Int
+  starts_at       DateTime? @db.Timestamp(6)
+  ends_at         DateTime? @db.Timestamp(6)
+  user_kinds      String[]  @default([])
+  active          Boolean?  @default(false)
+  created_at      DateTime? @db.Timestamp(6)
+  updated_at      DateTime? @db.Timestamp(6)
+}
+model nps_answers {
+  id                Int       @id @default(autoincrement())
+  rate              Int?
+  comment           String?
+  user_id           Int
+  organization_id   Int
+  user_name         String?   @db.VarChar(255)
+  user_role         String?   @db.VarChar(255)
+  organization_name String?   @db.VarChar(255)
+  user_email        String?   @db.VarChar(255)
+  created_at        DateTime? @db.Timestamp(6)
+  updated_at        DateTime? @db.Timestamp(6)
+
+  @@index([organization_id], map: "index_nps_answers_on_organization_id")
+  @@index([user_id], map: "index_nps_answers_on_user_id")
+}
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model service_desk_desks {
+  id                                  Int       @id @default(autoincrement())
+  name                                String?   @db.VarChar(255)
+  description                         String?
+  desk_type                           Int?
+  organization_id                     Int?
+  created_at                          DateTime? @db.Timestamp(6)
+  updated_at                          DateTime? @db.Timestamp(6)
+  required_fields                     Json?     @db.Json
+  active                              Boolean?  @default(true)
+  services_catalog_item               Boolean?
+  desk_exchange                       Boolean?  @default(false)
+  ticket_review                       Boolean?  @default(false)
+  review_type                         String?   @db.VarChar(255)
+  default_revised                     Int?      @default(5)
+  reminder                            Boolean?  @default(false)
+  summary                             Boolean?  @default(false)
+  cancelable_tickets                  Boolean?  @default(false)
+  ticket_with_checklist               Boolean?  @default(false)
+  can_stop_sla                        Boolean?  @default(false)
+  display_name                        String?   @db.VarChar(255)
+  icon                                String?   @db.VarChar(255)
+  add_ticket_feedback                 Boolean?  @default(false)
+  order                               Int?
+  ticket_with_sla_time                Boolean?  @default(false)
+  require_service_catalog_open_ticket Boolean?  @default(false)
+  internal_use                        Boolean?  @default(false)
+  attendance_type                     Int?      @default(1)
+  user_without_access_create_ticket   Boolean?  @default(false)
+  behavior_billed_tickets             String?   @default("answer_to_client_with_default_message") @db.VarChar(255)
+  behavior_not_billed_tickets         String?   @default("answer_to_client_with_default_message") @db.VarChar(255)
+  desk_with_sla                       Boolean?  @default(true)
+  appointment_type                    Int?      @default(1)
+  sla_goal                            Int?
+  receiving_new_tickets               Boolean?  @default(true)
+  email_sending_setting_id            Int?
+  can_reopen_revised_tickets          Boolean?  @default(false)
+  time_limit_to_reopening             Int?      @default(7)
+
+  @@index([active], map: "index_service_desk_desks_on_active")
+  @@index([organization_id], map: "index_service_desk_desks_on_organization_id")
+}
+model user_sessions {
+  id         Int       @id @default(autoincrement())
+  user_id    Int?
+  session_id String?   @unique(map: "index_user_sessions_on_session_id") @db.VarChar
+  ip         String?   @db.VarChar
+  user_agent String?   @db.VarChar
+  created_at DateTime? @db.Timestamp(6)
+  updated_at DateTime? @db.Timestamp(6)
+
+  @@index([user_id], map: "index_user_sessions_on_user_id")
+}
+model users_clients {
+  id                 Int       @id @default(autoincrement())
+  user_id            Int?
+  client_id          Int?
+  created_at         DateTime? @db.Timestamp(6)
+  updated_at         DateTime? @db.Timestamp(6)
+  default            Boolean?  @default(false)
+  authorization_flow Boolean?  @default(false)
+
+  @@index([user_id], map: "index_user_clients_users")
 }
